@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "bootstrap"
+    "name": "mdbootstrap"
   },
   "apps": [
     {
@@ -19,9 +19,27 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "./assets/sass/material-dashboard.scss",
+        "./assets/css/demo.css",
+        "./assets/css/material-dashboard.scss",
+        "../node_modules/font-awesome/scss/font-awesome.scss",
+        "../node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+        "../node_modules/angular-bootstrap-md/scss/mdb-free.scss",
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap-material-design/dist/js/ripples.min.js",
+        "../node_modules/bootstrap-material-design/dist/js/material.min.js",
+        "../node_modules/arrive/src/arrive.js",
+        "../node_modules/chart.js/dist/Chart.js",
+        "../node_modules/hammerjs/hammer.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/moment/moment.js",
+        "../node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+        "../node_modules/bootstrap-notify/bootstrap-notify.js",
+        "../node_modules/chartist/dist/chartist.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -55,6 +73,7 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {
+    }
   }
 }

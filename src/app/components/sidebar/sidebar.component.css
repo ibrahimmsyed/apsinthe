@@ -1,0 +1,12 @@
+.nav > li {
+    position: relative;
+    display: block;
+    width:100%;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.nav p{display: inline-block}
+

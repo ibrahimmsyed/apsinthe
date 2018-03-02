@@ -1,0 +1,4 @@
+.login{text-align:center;background:url('../../../assets/img/ap_bg.jpg') no-repeat center top;position: relative;height:100%;width:100%;display: flex;justify-content:center;align-items:center;}
+.login-wrapper img{display: inline-block;max-width: 40%;}
+.input-group-text{background-color: #FFF;text-align: center;justify-content: center;}
+.input-group-text img{max-width: 55%;}

@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+html,body{height:100%;width:100%;}
+body{min-height:100%;}
+.btn-primary-cs{background: #FFF;color:#0ba224;box-shadow: 0 0 1px #EFEFEF;}
+.alert{position: fixed;left:0;right:0;top:0;padding:1% 0;text-align: center;}
+.fa-2 {
+    font-size: 32px;
+    width: 32px;
+}

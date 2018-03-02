@@ -1,0 +1,15 @@
+.navbar .navbar-brand {-ms-flex-item-align: end;align-self: flex-end;}
+.counter {
+    position: absolute;
+    margin-left: -23px;
+    margin-top: -1px;
+    background-color: #fe1212;
+    color: #fff;
+    padding: 1px 7px;
+    font-size: 11px;
+    z-index: 2;
+    border-radius: 10rem;
+    top:-5px;
+    right:-5px;
+}
+.navbar .btn{overflow: visible;}
