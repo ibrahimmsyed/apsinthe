@@ -16,7 +16,7 @@ export class AuthService {
   
   constructor(private http: HttpClient) { }
   login(username: string, password: string) {
-    return this.http.post<any>('http://10.98.101.142/apsinthe/trackR/index.php/auth/login', { empid : username, password: password },{headers: new HttpHeaders().set('Content-Type', 'application/json')},)
+    return this.http.post<any>('http://10.98.20.105/apsinthe/trackR/index.php/auth/login', { empid : username, password: password },{headers: new HttpHeaders().set('Content-Type', 'application/json')},)
         .map(user => {
             // login successful if there's a jwt token in the response
             if (user && user.token_id) {
