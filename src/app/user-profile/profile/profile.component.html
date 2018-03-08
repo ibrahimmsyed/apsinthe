@@ -1,5 +1,40 @@
-<p>
-  profile works!
-</p>
-
-
+<!--<p>my-profile works!</p>-->
+<div class="UMT-userProfile-wrap">
+	<div class="UMT-usrProfile" *ngFor="let item of items">
+      <p class="UMT-header">My Profile</p>
+      <div class="UMT-lft-sec">
+          <div class="UMT-profile-pic">
+              <img [src]="'./../assets/img/profile-pic.png'" alt="Profile image" />
+          </div>
+          <p>{{item.fname}} {{item.lname}}</p>
+          <span>{{item.designation}} - {{item.team}}</span>
+          <label>{{item.emp_id}}</label>
+        </div>
+        <div class="UMT-rgt-sec">
+            <div class="UMT-about-details">
+                <h4>About</h4>
+                <p>Front-end web development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front-end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.</p>
+              </div>
+              <div class="UMT-official-info">
+                  <h4>Official Information</h4>
+                  <div class="UMT-official-list">
+                    <div class="UMT-formfield UMT-lbl-bg UMT-doj">
+                      <label>Date of Joining</label><span>{{item.doj}}</span>
+                    </div>
+                    <div class="UMT-formfield UMT-lbl-bg UMT-email"><label>Email</label><span>{{item.email_id}}</span></div>
+                    <div class="UMT-formfield UMT-lbl-bg UMT-dept"><label>Dept</label><span>{{item.dept}}</span></div>
+                    <div class="UMT-formfield UMT-lbl-bg UMT-divi"><label>Division</label><span>{{item.division}}</span></div>
+                  </div>
+                </div>
+                <div class="UMT-personal-info">			
+                  <h4>Personal Information</h4>
+                  <div class="UMT-personal-list">
+                    <div class="UMT-formfield UMT-lbl-bg UMT-gndr"><label>Gender</label><span>{{item.gender}}</span></div>
+                    <div class="UMT-formfield UMT-lbl-bg UMT-dob"><label>DOB</label><span>{{item.dob}}</span></div>
+                    <div class="UMT-formfield UMT-lbl-bg UMT-contNo"><label>Contact No.</label><span>{{item.contact_no}}</span></div>
+                    <div class="UMT-formfield UMT-lbl-bg UMT-emgNo"><label>Emg. Contact No.</label><span>{{item.emergency_contact_no}}</span></div>
+                  </div>
+      </div>
+        </div>
+  </div>
+</div>

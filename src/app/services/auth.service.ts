@@ -22,8 +22,6 @@ export class AuthService {
             if (user && user.token_id) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));
-                
-                console.log(user);
             }
             return user;
 
@@ -37,12 +35,10 @@ export class AuthService {
 
   userAccessToken(){
     this.userData = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(this.userData);
-    console.log(this.userData.token_id);
-    
     this.user_token = new UserToken;
     this.user_token.token = this.userData.token_id;
     this.user_token.id = this.userData.id;
+    this.user_token.role = this.userData.user_role;
     return this.user_token;
   }
 }

@@ -48,15 +48,15 @@ export class LoginComponent implements OnInit {
             this.token = data.token;
             this.alertservice.success(data.message);
             if(data.user_role == 0){
-              this.redirectUrl = "dashboard";
+              this.redirectUrl = "dashboard/profile";
               this.perm = ["ADMIN"];
               this.permission(this.perm,this.redirectUrl);
             }else if(data.user_role == 1){
-              this.redirectUrl = "user-profile/calendar";
+              this.redirectUrl = "dashboard/calendar";
               this.perm = ["MEDIATOR"];
               this.permission(this.perm,this.redirectUrl);
             }else if(data.user_role == 2){
-              this.redirectUrl = "user-profile/calendar";
+              this.redirectUrl = "dashboard/development";
               this.perm = ["USER"];
               this.permission(this.perm,this.redirectUrl);
             }

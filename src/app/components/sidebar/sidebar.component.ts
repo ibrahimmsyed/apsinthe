@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { UserToken, User } from '../../model/User';
+
 declare const $: any;
 
 declare interface RouteInfo {
@@ -18,6 +21,17 @@ export const ROUTES: RouteInfo[] = [
     { path: 'upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' }, */
 ];
 
+export const ADMINROUTES: RouteInfo[] = [
+    { path: 'development', title: 'Development',  icon: 'event_note', class: '' },
+    { path: 'qa', title: 'Quality Assurance',  icon:'person', class: '' },
+    { path: 'ad-ops', title: 'Ad Operations',  icon:'content_paste', class: '' },
+/*         { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
+    { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
+    { path: 'maps', title: 'Maps',  icon:'location_on', class: '' },
+    { path: 'notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: 'upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' }, */
+];
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -25,11 +39,20 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
-  constructor() { }
+  user_token: UserToken;
+  constructor(private authService : AuthService) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.user_token = new UserToken;
+    this.user_token = this.authService.userAccessToken();
+    console.log(this.user_token.role);
+    if(this.user_token.role === 0){
+        this.menuItems = ROUTES.filter(menuItem => menuItem);
+    }else if(this.user_token.role === 1){
+        this.menuItems = ADMINROUTES.filter(menuItem => menuItem);
+    }else if(this.user_token.role === 2){
+        this.menuItems = ADMINROUTES.filter(menuItem => menuItem);
+    }
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

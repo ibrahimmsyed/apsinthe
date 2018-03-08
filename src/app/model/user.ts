@@ -5,5 +5,6 @@ export class User {
 export class UserToken {
     token: string;
     id: string;
+    role:number;
 }
 

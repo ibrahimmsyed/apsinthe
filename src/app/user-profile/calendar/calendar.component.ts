@@ -12,7 +12,7 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     let user = this.authService.userAccessToken();
-    console.log(user);
+    //console.log(user);
   }
 
 }

@@ -7,9 +7,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { Routes, RouterModule } from '@angular/router';
-import { MyProfileComponent } from './my-profile/my-profile.component';
 
 
+/* 
 export const profileRoutes: Routes = [
   {
       path: 'user-profile',
@@ -17,29 +17,23 @@ export const profileRoutes: Routes = [
         { path: '', component: MyProfileComponent},
         { path: 'calendar', component: CalendarComponent},
         { path: 'profile',  component: ProfileComponent,
-        canActivate: [NgxPermissionsGuard],
-        data: {
-          permissions: {
-            only: 'ADMIN'
-          }
-        }
-        }
+        canActivate: [NgxPermissionsGuard],data: {permissions: {only: 'ADMIN'}}}
           
       ]
   }
 ];
-// const routes: Routes = [
-//   { path: 'user-profile/calendar', component: CalendarComponent },
-//   { path: 'user-profile/profile', component: ProfileComponent }
-// ];
+const routes: Routes = [
+  { path: 'user-profile/calendar', component: CalendarComponent },
+  { path: 'user-profile/profile', component: ProfileComponent }
+]; */
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(profileRoutes)
+    /* RouterModule.forChild(profileRoutes) */
   ],
-  declarations: [CalendarComponent, ProfileComponent,MyProfileComponent],
+  declarations: [CalendarComponent, ProfileComponent],
   providers: [AuthService],
-  exports:[CalendarComponent,ProfileComponent,MyProfileComponent]
+  exports:[CalendarComponent,ProfileComponent]
 })
 export class UserProfileModule { }

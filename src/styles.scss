@@ -5,6 +5,7 @@ body{min-height:100%;}
 .btn-primary-cs{background: #FFF;color:#0ba224;box-shadow: 0 0 1px #EFEFEF;}
 .alert{position: fixed;left:0;right:0;top:0;padding:1% 0;text-align: center;}
 .fa-2 {
-    font-size: 32px;
+    font-size: 24px;
     width: 32px;
 }
+.form-group.is-focused .form-control{background-image: none !important;}

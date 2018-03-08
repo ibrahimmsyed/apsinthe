@@ -19,6 +19,7 @@ import { AlertComponent } from './alert/alert/alert.component';
 import { AlertService } from './services/alert.service';
 import { MainComponent } from './main/main.component';
 import { ComponentsModule } from './components/components.module';
+import { ProfileService } from './services/profile.service';
 
 
 
@@ -42,7 +43,8 @@ import { ComponentsModule } from './components/components.module';
     AuthService,
     AuthGuard,
     LoginGuard,
-    AlertService
+    AlertService,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })
