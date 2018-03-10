@@ -9,4 +9,7 @@
     padding: 10px 15px;
 }
 .nav p{display: inline-block}
+.nav-submenu li{list-style: none;padding:2% 0;}
+.nav-submenu{padding-left:15%;}
+.nav-submenu li a{padding: 10px 15px;padding-left:0;position: relative;display: block;margin-left:0;}
 

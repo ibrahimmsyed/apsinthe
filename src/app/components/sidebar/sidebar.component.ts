@@ -9,12 +9,15 @@ declare interface RouteInfo {
     title: string;
     icon: string;
     class: string;
+    link: boolean;
+    submenu: any;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: 'calendar', title: 'Calendar',  icon: 'event_note', class: '' },
-    { path: 'profile', title: 'User Profile',  icon:'person', class: '' },
-/*     { path: 'table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
+    { path: 'calendar', title: 'Calendar',  icon: 'event_note', class: '', 'link': true, submenu : '' },
+    { path: 'profile', title: 'User Profile',  icon:'person', class: '', 'link': true, submenu : '' },
+    { path: 'javascript:void();', title: 'Task',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'task/create', title: 'Create',  icon:'bubble_chart', class: '','link': true,}] },
+    
+ /*   { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     { path: 'maps', title: 'Maps',  icon:'location_on', class: '' },
     { path: 'notifications', title: 'Notifications',  icon:'notifications', class: '' },
@@ -22,10 +25,10 @@ export const ROUTES: RouteInfo[] = [
 ];
 
 export const ADMINROUTES: RouteInfo[] = [
-    { path: 'development', title: 'Development',  icon: 'event_note', class: '' },
-    { path: 'qa', title: 'Quality Assurance',  icon:'person', class: '' },
-    { path: 'ad-ops', title: 'Ad Operations',  icon:'content_paste', class: '' },
-/*         { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
+    { path: 'development', title: 'Development',  icon: 'event_note', class: '','link': true, submenu : '' },
+    { path: 'qa', title: 'Quality Assurance',  icon:'person', class: '','link': true,submenu : '' },
+    { path: 'ad-ops', title: 'Ad Operations',  icon:'content_paste', class: '' ,'link': true, submenu : ''},
+/*  { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     { path: 'maps', title: 'Maps',  icon:'location_on', class: '' },
     { path: 'notifications', title: 'Notifications',  icon:'notifications', class: '' },

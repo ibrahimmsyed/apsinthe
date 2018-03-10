@@ -3,7 +3,7 @@ a.active{border-bottom:1px solid blue;}
 
 * { box-sizing: border-box; }
 body { background:#eee; }
-.UMT-userProfile-wrap { text-align: center; background:#eee; padding: 35px 0; } 
+.UMT-userProfile-wrap { text-align: center;} 
 .UMT-userProfile-wrap p { margin:0; }
 .UMT-usrProfile { max-width:100%; margin:40px 20px 0; text-align:center; font-family: OpenSans, Helvetica, sans-serif; background:#fff; position: relative; padding: 40px 20px 20px; border: 1px solid #eee; box-shadow: 0 4px 10px 0 #eee; border-radius: 4px; }
 .UMT-header { font-size: 14px; font-weight: normal; font-family: OpenSans, Helvetica, sans-serif; background:#0ba224; padding: 20px; color:#fff; border-radius: 4px; position: absolute; left: 20px; right: 20px; top: -30px; margin:0; text-align: left; box-shadow: 0 2px 3px rgba(0,0,0,0.2); }
