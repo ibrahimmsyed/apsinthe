@@ -15,10 +15,10 @@ body { background:#eee; }
 
 .form-control { border:none; }
 .UMT-lft-sec { width: 27%; display: inline-block; vertical-align: top; }
-.UMT-profile-pic { margin: 60px 0 40px; }
+.UMT-profile-pic { margin: 60px 0 40px;pointer-events: none; }
 .UMT-lft-sec p { font-weight: bold; }
 .UMT-lft-sec span { display: inline-block; width:100%; font-size:14px; color:#999; margin: 8px 0 30px; } 
-.UMT-lft-sec label { display: inline-block; padding: 12px 30px; color: #0ba224; background: #fff; box-shadow: 0 0px 3px 0 rgba(11,162,36,0.8); font-weight: bold; font-size: 18px; border: 1px solid rgba(11,162,36,0.4); }
+.UMT-lft-sec label { cursor: default;}
 .UMT-rgt-sec { width: 72%; display: inline-block; vertical-align: top; border-left: 1px solid #e4e4e4; text-align: left; padding: 15px 0; }
 .UMT-rgt-sec h4 { color: #555; font-size: 16px; margin: 30px 0 15px; }
 .UMT-about-details { padding: 0 50px; }

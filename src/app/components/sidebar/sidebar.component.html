@@ -45,16 +45,22 @@
 
     <div class="nav-container">
         <ul class="nav">
-            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-                <a  routerLink="/{{menuItem.path}}" href="javascript:;">
+            <li *ngFor="let menuItem of menuItems ; let i = index;" (click)="toggleMenu(i)">
+                <a *ngIf="menuItem.link" routerLink="/{{menuItem.path}}" routerLinkActive="active"  class="{{menuItem.class}}">
                     <i class="material-icons">{{menuItem.icon}}</i>
                     <p>{{menuItem.title}}</p>
-                    <ul class="nav-submenu">
-                        <li *ngFor="let item of menuItem.submenu" class="{{item.class}}">
-                            <a  routerLink="/{{item.path}}">
-                                <i class="material-icons">{{item.icon}}</i>
-                                <p>{{item.title}}</p>
-                            </a>
+                </a>
+                <a *ngIf="!menuItem.link" >
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}}</p>
+                    <ul class="nav-submenu" [ngClass]="{'active': i == index}" >
+                        <li *ngFor="let item of menuItem.submenu" class="{{item.class}} {{i}}" routerLinkActive="active"  #patientDDL>
+                            
+                                <a  routerLink="/{{item.path}}"  class="{{menuItem.class}}">
+                                    <i class="material-icons">{{item.icon}} </i>
+                                    <p>{{item.title}}</p>
+                                </a>
+                            
                         </li>
                     </ul>
                 </a>

@@ -1,4 +1,13 @@
-<p>
-  calendar works!
-</p>
+<div class="mycalendar">
+    <div class="calendar-head">
+        <div class="current-year">{{showYear}}</div>
+        <div class="current-month">{{showMonth}}</div>
+    </div>
+    <div class="week-row group">
+          <div class="w_clm col" *ngFor="let weekdays of weekDays">{{weekdays}}</div>
+    </div>
 
+    <div class="cal-rows group">
+
+    </div>
+</div>

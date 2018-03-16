@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { UserToken, User } from '../../model/User';
+
 
 declare const $: any;
 
@@ -13,9 +14,10 @@ declare interface RouteInfo {
     submenu: any;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: 'calendar', title: 'Calendar',  icon: 'event_note', class: '', 'link': true, submenu : '' },
-    { path: 'profile', title: 'User Profile',  icon:'person', class: '', 'link': true, submenu : '' },
-    { path: 'javascript:void();', title: 'Task',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'task/create', title: 'Create',  icon:'bubble_chart', class: '','link': true,}] },
+    
+    { path: '', title: 'Profile',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'profile', title: 'Profile',  icon:'bubble_chart', class: '','link': true, },{ path: 'calendar', title: 'Calendar',  icon:'notifications', class: '','link': true, }] },
+    { path: '', title: 'Task',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'create', title: 'Create',  icon:'bubble_chart', class: '','link': true, },{ path: 'list', title: 'List',  icon:'notifications', class: '','link': true, },{ path: 'completed', title: 'Completed',  icon:'notifications', class: '','link': true, }] },
+    { path: '', title: 'Report',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'productivity', title: 'Productivity',  icon:'bubble_chart', class: '','link': true, },{ path: 'quality', title: 'Utilisation',  icon:'notifications', class: '','link': true, }] },
     
  /*   { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
@@ -38,17 +40,25 @@ export const ADMINROUTES: RouteInfo[] = [
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
+
 export class SidebarComponent implements OnInit {
   menuItems: any[];
   user_token: UserToken;
-  constructor(private authService : AuthService) { }
+  index:number;
+  something:string;
+  i:number;
 
+  constructor(private authService : AuthService) { }
+  @ViewChild('patientDDL') patientDDL:ElementRef;
+  @ViewChildren('patientDDL') childComponents: QueryList<ElementRef>;
   ngOnInit() {
+
+    
     this.user_token = new UserToken;
     this.user_token = this.authService.userAccessToken();
-    console.log(this.user_token.role);
+   
     if(this.user_token.role === 0){
         this.menuItems = ROUTES.filter(menuItem => menuItem);
     }else if(this.user_token.role === 1){
@@ -56,11 +66,40 @@ export class SidebarComponent implements OnInit {
     }else if(this.user_token.role === 2){
         this.menuItems = ADMINROUTES.filter(menuItem => menuItem);
     }
+
+
   }
+  ngAfterViewInit() {
+    setTimeout(()=>{   
+        console.log(this.patientDDL);
+        console.log(this.childComponents.toArray().length);
+        for(var i=0;i<this.childComponents.toArray().length;i++){
+            if(this.childComponents.toArray()[i].nativeElement.classList.contains('active')){
+                console.log(this.childComponents.toArray()[i].nativeElement.classList);
+                this.index = this.childComponents.toArray()[i].nativeElement.classList[0];
+            }
+        }
+        //console.log(this.patientDDL.nativeElement.classList.contains('active'));
+        //console.log(this.patientDDL.nativeElement.classList);
+        /* if(this.patientDDL.nativeElement.classList.contains('active')) {
+            console.log(this.patientDDL.nativeElement.classList);
+            this.index = this.patientDDL.nativeElement.classList[0];
+          } */
+   },500);
+
+  }
+
+
+
   isMobileMenu() {
       if ($(window).width() > 991) {
           return false;
       }
       return true;
   };
+
+  toggleMenu(i) {
+    this.index = i;
+    
+  }
 }

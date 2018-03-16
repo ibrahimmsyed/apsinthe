@@ -6,5 +6,7 @@ export class UserToken {
     token: string;
     id: string;
     role:number;
+    intime:number;
+    expiredtime:number;
 }
 

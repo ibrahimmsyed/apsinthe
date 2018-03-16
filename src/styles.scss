@@ -8,4 +8,23 @@ body{min-height:100%;}
     font-size: 24px;
     width: 32px;
 }
-.form-group.is-focused .form-control{background-image: none !important;}
+a{color:#47b85a}
+a:hover,a:active,a:focus{color:#0ba224}
+.form-group.is-focused 
+.form-control{background-image: none !important;}
+
+
+.current-month {text-align: center; font-size: 30px; color: #fff; font-weight: normal}
+.current-year {text-align: center; font-size: 25px; color: #fff; font-weight: normal}
+.calendar-head {background: #CF3128; padding: 20px;}
+.week-row {background: #FF3C31;display:flex;}
+.w_clm {width: 12.91%; text-align: center; color: #fff;  font-weight: normal;}
+.cal-rows .w_clm {min-height: 60px; color: #333; display: flex; justify-content: center; align-items: center; line-height: 100%; font-weight: bold;}
+.tdy-date {background: #fff}
+.col{display: block;float:left;margin: 1% 0 1% 1.6%;}
+.col:first-child { margin-left: 0; }
+.group:before, .group:after {content:""; display:table;}
+.group:after {clear:both;}
+.group {zoom:1;}
+.cal-rows .week-row{background: transparent;}
+.mycalendar {background: #e4cfcf; padding: 0; font-weight: bold}

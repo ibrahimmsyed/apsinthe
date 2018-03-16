@@ -20,6 +20,7 @@ import { AlertService } from './services/alert.service';
 import { MainComponent } from './main/main.component';
 import { ComponentsModule } from './components/components.module';
 import { ProfileService } from './services/profile.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -36,6 +37,7 @@ import { ProfileService } from './services/profile.service';
     FormsModule,
     HttpClientModule,
     routing,
+    BrowserAnimationsModule,
     // Specify your library as an import
     NgxPermissionsModule.forRoot()
   ],
