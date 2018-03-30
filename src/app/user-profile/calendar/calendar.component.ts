@@ -79,7 +79,12 @@ export class CalendarComponent implements OnInit {
         html += "</div><div class='week-row group'>";
       }
       if((i>= this.fdayStart) && (dy<= this.lDate)){
-        html += "<div class='w_clm col'><span>"+ dy +"</span></div>";
+        if(dy == this.nowDate){
+          html += "<div class='tdy-date w_clm col date_"+dy+"'><span>"+ dy +"</span></div>";
+          }else{
+          
+          html += "<div class='w_clm col date_"+dy+"'><span>"+ dy +"</span></div>";
+          }    
         dy=dy+1;
         
       } else {

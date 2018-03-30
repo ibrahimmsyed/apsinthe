@@ -5,6 +5,11 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { BroadcastService } from '../services/broadcast.service';
+import { Observable } from "rxjs";
+import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
+import { UserToken } from '../model/User';
+import { AuthService } from '../services/auth.service';
 
 declare const $: any;
 
@@ -18,13 +23,14 @@ export class MainComponent implements OnInit {
   private _router: Subscription;
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
-
+  interval = 5000;
+  user_token: UserToken;
+  
   @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
-  constructor( public location: Location, private router: Router) {}
+  constructor( public location: Location, private router: Router, private authservice: AuthService, private braodcastService : BroadcastService) {}
 
   ngOnInit() {
-      //$(document).ready(function() { $('body').bootstrapMaterialDesign(); });
       $.material.init();
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
       const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
@@ -53,20 +59,16 @@ export class MainComponent implements OnInit {
           let ps = new PerfectScrollbar(elemMainPanel);
           ps = new PerfectScrollbar(elemSidebar);
       }
-  }
+
+      this.user_token = new UserToken;
+      this.user_token = this.authservice.userAccessToken();
+
+    }
   ngAfterViewInit() {
       this.runOnRouteChange();
+      this.checkForBroadcast();
   }
-  isMaps(path){
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      titlee = titlee.slice( 1 );
-      if(path == titlee){
-          return false;
-      }
-      else {
-          return true;
-      }
-  }
+
   runOnRouteChange(): void {
     if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
@@ -80,6 +82,14 @@ export class MainComponent implements OnInit {
           bool = true;
       }
       return bool;
+  }
+  checkForBroadcast(){
+    /* IntervalObservable.create(this.interval).subscribe(() => {
+      this.braodcastService.get(this.user_token.token,this.user_token.id)
+        .subscribe((data) => {
+            console.log(data);
+        });
+    }); */
   }
 
 }

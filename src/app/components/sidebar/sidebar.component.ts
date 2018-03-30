@@ -71,11 +71,11 @@ export class SidebarComponent implements OnInit {
   }
   ngAfterViewInit() {
     setTimeout(()=>{   
-        console.log(this.patientDDL);
-        console.log(this.childComponents.toArray().length);
+        //console.log(this.patientDDL);
+        //console.log(this.childComponents.toArray().length);
         for(var i=0;i<this.childComponents.toArray().length;i++){
             if(this.childComponents.toArray()[i].nativeElement.classList.contains('active')){
-                console.log(this.childComponents.toArray()[i].nativeElement.classList);
+                //console.log(this.childComponents.toArray()[i].nativeElement.classList);
                 this.index = this.childComponents.toArray()[i].nativeElement.classList[0];
             }
         }

@@ -21,6 +21,7 @@ import { MainComponent } from './main/main.component';
 import { ComponentsModule } from './components/components.module';
 import { ProfileService } from './services/profile.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BroadcastService } from './services/broadcast.service';
 
 
 
@@ -46,7 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthGuard,
     LoginGuard,
     AlertService,
-    ProfileService
+    ProfileService,
+    BroadcastService
   ],
   bootstrap: [AppComponent]
 })
