@@ -8,7 +8,7 @@ export class LoginGuard implements CanActivate {
   canActivate(router: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem('currentUser')) {
         // logged in so return true
-        this.router.navigate(['/dashboard/calendar'], { queryParams: { returnUrl: state.url }});
+        this.router.navigate(['/profile'], { queryParams: { returnUrl: state.url }});
         return false;
     }else{
         return true;
