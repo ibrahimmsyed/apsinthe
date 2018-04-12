@@ -1,0 +1,13 @@
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" (click)="toggleNotification()">
+            <i class="fa fa-bell"></i>
+            <span class="notification" *ngIf="totalNotification">{{totalNotification}}</span>
+        </a>
+        <ul class="notification-dropdown dropdown-menu"  *ngIf="toggleValue == true">
+            <li *ngFor="let item of notificationData ; index as i; "><a [routerLink]="['/seekdetail', item.BROAD_ID, i+1]">{{item.TITLE}}</a></li>
+        </ul>
+    </li>
+</ul>
+
+

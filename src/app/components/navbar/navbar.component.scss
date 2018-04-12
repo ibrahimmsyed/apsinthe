@@ -13,3 +13,8 @@
     right:-5px;
 }
 .navbar .btn{overflow: visible;}
+.navbar .notification{top:15px;right:5px;}
+.navbar{box-shadow: 0 1px 1px 0 rgba(201, 201, 201, 0.8);min-height:71px;}
+.navbar .navbar-nav > li > .dropdown-menu{opacity: 1;visibility: visible;right: 0;left: auto;max-width: none;min-width: 200px;}
+.navbar .dropdown-menu a{display: block}
+.fa {font-size: 28px;color:#a5a5a5;margin:0 20px;}

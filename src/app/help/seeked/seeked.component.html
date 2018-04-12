@@ -1,0 +1,18 @@
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Message</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of broadcastData;let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.TITLE}}</td>
+        <td>{{item.MESSAGE}}</td>
+        <td>{{item.BROAD_STATUS ? 'Accepted' : 'Pending'}}</td>
+      </tr>
+    </tbody>
+  </table>

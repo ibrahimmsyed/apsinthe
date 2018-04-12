@@ -52,11 +52,16 @@
         </div>
     </div>
 </nav>-->
-<nav class="navbar navbar-transparent justify-content-between">
-    <a class="navbar-brand"></a>
+<nav class="navbar justify-content-between">
+    <a class="navbar-brand">{{getTitle()}}</a>
     <form class="form-inline">
-        <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">
+            <a href="#" class="" (click)="logout()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </a>
+        
+        <!-- <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
-        </button>
+        </button> -->
+        <app-notification></app-notification>
     </form>
 </nav>

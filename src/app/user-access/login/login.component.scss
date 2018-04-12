@@ -1,0 +1,8 @@
+//.login{text-align:center;background:url('../../../assets/img/ap_bg.jpg') no-repeat center top;background-size:cover;position: relative;height:100%;width:100%;display: flex;justify-content:center;align-items:center;}
+.login{text-align:center;background:url('../../../assets/img/ap_bg_.jpg') no-repeat center top;background-size:cover;position: relative;height:100%;width:100%;display: flex;justify-content:flex-end;}
+.login-wrapper{background: rgba(255,255,255,0.9);max-width: 500px;padding: 2% 0;border-radius: 5px;}
+.login-wrapper img{display: inline-block;max-width: 60%;}
+.input-group-text{background-color: #FFF;text-align: center;justify-content: center;padding: 1rem 1.25rem;}
+.login-wrapper .form-control{padding:1rem;}
+input[type=password],input[type=text]{height:1rem !important;}
+.input-group-text{padding: 0.5rem 1rem !important;}

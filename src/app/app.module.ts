@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { routing } from './app.routing';
 import { NgxPermissionsModule } from 'ngx-permissions';
@@ -22,6 +22,11 @@ import { ComponentsModule } from './components/components.module';
 import { ProfileService } from './services/profile.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BroadcastService } from './services/broadcast.service';
+import { HelpModule } from './help/help.module';
+import { SeekComponent } from './help/seek/seek.component';
+
+
+
 
 
 
@@ -39,6 +44,8 @@ import { BroadcastService } from './services/broadcast.service';
     HttpClientModule,
     routing,
     BrowserAnimationsModule,
+    HelpModule,
+    ReactiveFormsModule,
     // Specify your library as an import
     NgxPermissionsModule.forRoot()
   ],

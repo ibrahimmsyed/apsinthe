@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { NotificationComponent } from '../help/notification/notification.component';
+
 
 
 
@@ -18,12 +20,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-
-  ],
+    NotificationComponent
+],
   exports: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    NotificationComponent
 
   ]
 })

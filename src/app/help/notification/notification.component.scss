@@ -1,0 +1,13 @@
+.fa {
+    font-size: 28px !important;color:#a5a5a5;
+}
+.navbar-nav > li > .dropdown-toggle{font-size:21px;}
+
+.notification-dropdown{top: 100%;
+right: 0;
+left: auto;
+z-index: 9999999999;
+background: #FFF;
+font-size: 16px;opacity:1 !important;visibility: visible !important;margin-top:-30px !important;}
+.notification-dropdown li{font-size: 16px;color:#a5a5a5;}
+.notification-dropdown li a{display: block;}

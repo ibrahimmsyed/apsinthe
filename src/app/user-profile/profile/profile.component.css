@@ -5,33 +5,24 @@ a.active{border-bottom:1px solid blue;}
 body { background:#eee; }
 .UMT-userProfile-wrap { text-align: center;} 
 .UMT-userProfile-wrap p { margin:0; }
-.UMT-usrProfile { max-width:100%; margin:40px 20px 0; text-align:center; font-family: OpenSans, Helvetica, sans-serif; background:#fff; position: relative; padding: 40px 20px 20px; border: 1px solid #eee; box-shadow: 0 4px 10px 0 #eee; border-radius: 4px; }
+.UMT-usrProfile { max-width:100%; margin:40px 20px 0; text-align:center; font-family: OpenSans, Helvetica, sans-serif;  position: relative; padding: 40px 20px 20px; border: 1px solid #eee; box-shadow: 0 4px 10px 0 #eee; border-radius: 4px; }
 .UMT-header { font-size: 14px; font-weight: normal; font-family: OpenSans, Helvetica, sans-serif; background:#0ba224; padding: 20px; color:#fff; border-radius: 4px; position: absolute; left: 20px; right: 20px; top: -30px; margin:0; text-align: left; box-shadow: 0 2px 3px rgba(0,0,0,0.2); }
-.UMT-formfield { margin: 0 0 10px; font-size: 14px; }
+.UMT-formfield { width: 41%;display: inline-block;margin: 1% 4%;border: 1px solid #EFEFEF;padding: 10px;}
 .UMT-formfield *  { vertical-align: middle; }
-.UMT-formfield label { width:150px; display: inline-block; text-align: left; color:#666; margin:0; position: relative; padding-left: 35px; height:30px; line-height:30px; }
-.UMT-formfield span { display:inline-block; width:195px; height:30px; background:#fff; padding:2px 5px; line-height: 26px; color:#333; text-align: left; }
-.UMT-formfield label:before { background:url("../../../assets/img/iconsprite.png") no-repeat left top; content:''; height:30px; width:30px; position: absolute; left: 0; top:0; }
+.UMT-formfield label { display: inline-block; text-align: left; color:#bcbec0; margin:0; position: relative;font-size: 16px; }
+.UMT-formfield span { display:inline-block;color:#555555; text-align: left; font-size:19px;}
 
+
+.UMT-personal-list,.UMT-official-list{font-size: 0;padding:2% 0;}
 .form-control { border:none; }
-.UMT-lft-sec { width: 27%; display: inline-block; vertical-align: top; }
+.UMT-lft-sec { width: 23%; display: inline-block; vertical-align: top;background: #FFF;padding-bottom: 5%; }
 .UMT-profile-pic { margin: 60px 0 40px;pointer-events: none; }
 .UMT-lft-sec p { font-weight: bold; }
 .UMT-lft-sec span { display: inline-block; width:100%; font-size:14px; color:#999; margin: 8px 0 30px; } 
 .UMT-lft-sec label { cursor: default;}
-.UMT-rgt-sec { width: 72%; display: inline-block; vertical-align: top; border-left: 1px solid #e4e4e4; text-align: left; padding: 15px 0; }
-.UMT-rgt-sec h4 { color: #555; font-size: 16px; margin: 30px 0 15px; }
+.UMT-rgt-sec { width: 72%; display: inline-block; vertical-align: top; border-left: 1px solid #e4e4e4; text-align: left; background: #FFF;margin-left:3%;}
+.UMT-rgt-sec h4 { color: #555; font-size: 24px; margin: 0; padding:20px 40px;background: #f8f8f8;}
 .UMT-about-details { padding: 0 50px; }
 .UMT-about-details p { font-size: 14px; color:#636363; } 
-.UMT-official-info, .UMT-personal-info { padding: 0 50px; border-top: 1px solid #e4e4e4; margin: 40px 0 0; }
-.UMT-official-list, .UMT-personal-list { column-count: 2; }
-/*.UMT-lbl-bg { background:url(img/iconsprite.png) no-repeat left top; padding-left: 40px; }*/
-.UMT-doj label:before { background-position: 5px 6px; }
-/*.UMT-doj { background-position: 5px 6px; }*/
-.UMT-email label:before { background-position: 5px -30px; }
-.UMT-dept label:before { background-position: 5px -73px; }
-.UMT-divi label:before { background-position: 5px -118px; }
-.UMT-gndr label:before { background-position: 5px -161px; }
-.UMT-dob label:before { background-position: 0 -201px; }
-.UMT-contNo label:before { background-position: 5px -242px; }
-.UMT-emgNo label:before { background-position: 5px -281px; }
+.UMT-official-info, .UMT-personal-info { border-top: 1px solid #e4e4e4;}
+

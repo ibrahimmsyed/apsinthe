@@ -1,0 +1,19 @@
+<form [formGroup]="seekForm" (ngSubmit)="onSubmit(seekForm.value)">
+  <div class="form-group">
+    <label for="Title">Title</label>
+    <input type="text" class="form-control" id="Title" formControlName="title">
+    <div *ngIf="seekForm.controls['email']?.errors && !seekForm.controls['email']?.pristine" class="error-msg">
+      <div [hidden]="!seekForm.controls['email'].errors.required">Email is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Message">Message</label>
+    <textarea class="form-control" id="Message" rows="3" formControlName="message"></textarea>
+    <div *ngIf="seekForm.controls['email']?.errors && !seekForm.controls['email']?.pristine" class="error-msg">
+      <div [hidden]="!seekForm.controls['email'].errors.required">Email is required.</div>
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary" [disabled]="seekForm.invalid">Submit</button>
+  
+</form>

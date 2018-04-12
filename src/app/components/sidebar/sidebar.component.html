@@ -37,7 +37,7 @@
         </li>
         <li>
             <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-               <i class="material-icons">person</i>
+                <i class="fa {{menuItem.icon}}" aria-hidden="true"></i>
                <p class="hidden-lg hidden-md">Profile</p>
             </a>
         </li>
@@ -47,22 +47,22 @@
         <ul class="nav">
             <li *ngFor="let menuItem of menuItems ; let i = index;" (click)="toggleMenu(i)">
                 <a *ngIf="menuItem.link" routerLink="/{{menuItem.path}}" routerLinkActive="active"  class="{{menuItem.class}}">
-                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <i class="fa {{menuItem.icon}}" aria-hidden="true"></i>
+                    <!-- <i class="material-icons">{{menuItem.icon}}</i> -->
                     <p>{{menuItem.title}}</p>
                 </a>
                 <a *ngIf="!menuItem.link" >
-                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <i class="fa {{menuItem.icon}}" aria-hidden="true"></i>
                     <p>{{menuItem.title}}</p>
                     <ul class="nav-submenu" [ngClass]="{'active': i == index}" >
                         <li *ngFor="let item of menuItem.submenu" class="{{item.class}} {{i}}" routerLinkActive="active"  #patientDDL>
-                            
                                 <a  routerLink="/{{item.path}}"  class="{{menuItem.class}}">
-                                    <i class="material-icons">{{item.icon}} </i>
+                                    <i class="fa {{item.icon}}" aria-hidden="true"></i>
                                     <p>{{item.title}}</p>
                                 </a>
-                            
                         </li>
                     </ul>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </a>
             </li>
         </ul>

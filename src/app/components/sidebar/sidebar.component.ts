@@ -15,9 +15,10 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     
-    { path: '', title: 'Profile',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'profile', title: 'Profile',  icon:'bubble_chart', class: '','link': true, },{ path: 'calendar', title: 'Calendar',  icon:'notifications', class: '','link': true, }] },
-    { path: '', title: 'Task',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'create', title: 'Create',  icon:'bubble_chart', class: '','link': true, },{ path: 'list', title: 'List',  icon:'notifications', class: '','link': true, },{ path: 'completed', title: 'Completed',  icon:'notifications', class: '','link': true, }] },
-    { path: '', title: 'Report',  icon:'content_paste', 'link': false, class: '', submenu : [{ path: 'productivity', title: 'Productivity',  icon:'bubble_chart', class: '','link': true, },{ path: 'quality', title: 'Utilisation',  icon:'notifications', class: '','link': true, }] },
+    { path: '', title: 'Profile',  icon:'fa-user', 'link': false, class: '', submenu : [{ path: 'profile', title: 'Profile',  icon:'fa-user-circle-o', class: '','link': true, },{ path: 'calendar', title: 'Calendar',  icon:'fa-calendar', class: '','link': true, }] },
+    { path: '', title: 'Task',  icon:'fa-tasks', 'link': false, class: '', submenu : [{ path: 'create', title: 'Create',  icon:'fa-plus-square', class: '','link': true, },{ path: 'list', title: 'List',  icon:'fa-list', class: '','link': true, },{ path: 'completed', title: 'Completed',  icon:'fa-check-square', class: '','link': true, }] },
+    { path: '', title: 'Report',  icon:'fa-pencil-square', 'link': false, class: '', submenu : [{ path: 'productivity', title: 'Productivity',  icon:'fa-clock-o', class: '','link': true, },{ path: 'utilisation', title: 'Utilisation',  icon:'fa-cogs', class: '','link': true, },{ path: 'quality', title: 'Quality',  icon:'fa-thumbs-up', class: '','link': true, }] },
+    { path: '', title: 'Help Seek',  icon:'fa-life-ring', 'link': false, class: '', submenu : [{ path: 'seek', title: 'Seek',  icon:'fa-hand-paper-o', class: '','link': true, },{ path: 'seeked', title: 'Seeked',  icon:'fa-handshake-o', class: '','link': true, },{ path: 'offered', title: 'Offered',  icon:'fa-envelope-open', class: '','link': true, }] },
     
  /*   { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
@@ -40,7 +41,7 @@ export const ADMINROUTES: RouteInfo[] = [
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css'],
+  styleUrls: ['./sidebar.component.scss'],
 })
 
 export class SidebarComponent implements OnInit {
