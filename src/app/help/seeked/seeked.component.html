@@ -5,14 +5,16 @@
         <th scope="col">Title</th>
         <th scope="col">Message</th>
         <th scope="col">Status</th>
+        <th scope="col">Accepted by</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of broadcastData;let i = index">
+      <tr *ngFor="let item of sentData;let i = index">
         <th scope="row">{{i+1}}</th>
         <td>{{item.TITLE}}</td>
         <td>{{item.MESSAGE}}</td>
         <td>{{item.BROAD_STATUS ? 'Accepted' : 'Pending'}}</td>
+        <td>{{acceptedUser[i]}}</td>
       </tr>
     </tbody>
   </table>

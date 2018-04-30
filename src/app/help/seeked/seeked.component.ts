@@ -14,12 +14,16 @@ export class SeekedComponent implements OnInit {
 
   user_token: UserToken;
   acceptedMessage:string;
+  accpetedName:string;
   broadcastData:any;
   userData:any;
-  accpetedName:string;
-
+  
+  user : any;
+  sentData : any;
+  acceptedUser = {};
   pusheditems = {};
   olditems = {};
+  userAccepted = {};
   
   constructor(private authservice: AuthService, private braodcastService : BroadcastService, private alertservice: AlertService) { }
 
@@ -27,6 +31,14 @@ export class SeekedComponent implements OnInit {
     this.user_token = new UserToken;
     this.user_token = this.authservice.userAccessToken();
     this.sentBroadcast();
+
+
+    this.braodcastService.getuserbroadcastlist(this.user_token.token,this.user_token.id).subscribe((data) => {
+      this.sentData = data;
+      
+      this.findSendParty(this.sentData);
+     
+    });
   }
   ngAfterViewInit() {
     this.getsentBroadcast();
@@ -39,9 +51,8 @@ export class SeekedComponent implements OnInit {
   getsentBroadcast(){
     this.braodcastService.getuserbroadcastlist(this.user_token.token,this.user_token.id).subscribe((data) => {
       this.broadcastData = data;
-      console.log(this.broadcastData);
+
       for(let i of data){
-        
         this.pusheditems[i.BROAD_ID] = i.BROAD_STATUS;
       }
       
@@ -52,9 +63,9 @@ export class SeekedComponent implements OnInit {
       }else{
         for(let j in this.pusheditems){
           if(this.pusheditems[j] == this.olditems[j]){
-            //console.log('equal');
+            console.log('equal');
           }else{
-            //console.log('not equal');
+            console.log('not equal');
             this.alertAccepted(j);
           }
         }
@@ -89,6 +100,22 @@ export class SeekedComponent implements OnInit {
         });
       }
     });
+  }
+
+  findSendParty(data){
+    //console.log(data);
+    for(let i = 0; i < data.length; i++){
+      //console.log(data[i].SEND_PARTY);
+      if(data[i].RECEIVE_PARTY){
+        this.user = this.braodcastService.getuserdata(this.user_token.token,this.user_token.id,data[i].RECEIVE_PARTY).subscribe((data) => {
+          this.user = data;
+          this.acceptedUser[i] = this.user[0].fname + ' ' + this.user[0].lname;
+        });
+      }else{
+        this.acceptedUser[i] = 'N/A';
+      }
+    }
+    console.log(this.acceptedUser);
   }
 
 }

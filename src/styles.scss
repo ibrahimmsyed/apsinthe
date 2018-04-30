@@ -3,7 +3,7 @@
 html,body{height:100%;width:100%;background-color: #EEE;}
 body{min-height:100%;}
 .btn-primary-cs{background: #FFF;color:#0ba224;box-shadow: 0 0 1px #EFEFEF;}
-.alert{position: fixed;left:0;right:0;top:0;padding:1% 0;text-align: center;}
+.alert{position: fixed;left:0;right:0;top:0;padding:1% 0;text-align: center;z-index:99999999999999;}
 .fa-2 {
     font-size: 24px;
     width: 32px;

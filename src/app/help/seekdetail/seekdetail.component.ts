@@ -50,18 +50,18 @@ export class SeekdetailComponent implements OnInit {
       });
   }
   getsendername(id){
-    console.log(id);
+    //console.log(id);
     this.broadcastservice.getuserdata(this.user_token.token, this.user_token.id,  id).subscribe((data) => {
       this.userData = data;
       this.senderName = this.userData[0].fname + ' ' + this.userData[0].lname;
       
-      console.log(this.userData[0]);
+      //console.log(this.userData[0]);
     });
   }
 
   accept(){
     this.broadcastservice.acceptbroadcast(this.user_token.token, this.user_token.id,  this.braodcastData.BROAD_ID).subscribe((data) => {
-      console.log(data);
+      //console.log(data);
       this._location.back();
     });
     
