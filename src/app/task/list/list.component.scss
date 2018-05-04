@@ -1,0 +1,79 @@
+h2{
+      font-weight: 500;
+      color: #0ba224;
+      padding-bottom: 1.5rem
+} 
+.task-list{
+      margin: 3rem 3rem 0 3rem
+}
+.title.row > div{
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px 10px 20px 10px;
+      background: #e6e7e8;
+      border-top: 5px solid #0ba224 !important;
+      color: #636363;
+      font-weight: 400
+}
+.row{
+      box-shadow: 1px 1px 5px rgba(0,0,0,.1);
+      margin-top: 5px;
+      margin-bottom: 5px
+}
+.row > div{ 
+      border-top: 0;
+      border-left: 0;
+      padding: 18px 10px;      
+      background: #FFF;
+      color: #999999;
+      font-size: 15px;
+}
+.row.active > div{
+      background: #f8f9f9
+}
+.row:first-child > div{
+      border-top: 0px  solid #CCC;
+}
+.row > div:first-child{
+      border-left: 0px  solid #CCC;
+}
+.col-converge{
+      padding-left: 3% !important
+}
+.col-converge.active{
+      color:#1b6ac4 !important ;
+}
+
+.task-detail-wrapper.row{
+      transition: all 0.2s ease-in;
+      cursor: pointer
+}
+
+.task-detail-wrapper.row:hover{ 
+      box-shadow: -2px 3px 7px rgba(11,162,36,0.2)
+}
+.task-detail-wrapper.row:hover > div{
+      background: #f9f8f8
+}
+.task-list .btn{
+      margin: 0;
+      padding: 0.375rem 0.75rem
+}
+
+app-create{
+      margin: 0
+}
+app-create ::ng-deep .task-create{
+      margin-top: -5px;
+      padding: 1rem 0;
+      margin: 0 -15px
+}
+::ng-deep .form-row .form-group{
+      padding: 0.5% 2% !important
+}
+.checkbox{
+      position: absolute;
+      left: 6%;
+      top: 23px;
+}
+

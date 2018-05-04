@@ -1,0 +1,46 @@
+
+<div class="task-list" *ngIf="showList">
+      <div class="container-fluid">
+      <div class="row title"> 
+            <div class="col-md-2 col-converge">ConvergeID</div>
+            <div class="col-md-1">Job Type</div>
+            <div class="col-md-1">Publisher</div>
+            <div class="col-md-1">Complexity</div>  
+            <div class="col-md-2">Status</div>
+            <div class="col-md-2">Sch.Start</div>
+            <div class="col-md-1">Sch.End</div>
+            <div class="col-md-1">Sch.Hours</div> 
+            <div class="col-md-1">Edit</div>
+      </div>   
+      <div *ngFor="let item of taskdata | bucket : '1':'2':'4'; let current=index ">
+            <div class="row task-detail-wrapper" (click)="openTaskDetail(item.task_id)" [ngClass]="{'active':showForm[item.task_id]}">
+                  <div class="col-md-2 col-converge" [ngClass]="{'active':showForm[item.task_id]}">
+                        <input type="checkbox" class="checkbox" *ngIf="item.task_status==2" (click)="onTaskComplete(item.task_id,3)">
+                        {{item.converge_id}} --- {{item.task_status}}
+                  </div>
+                  <div class="col-md-1"><span *ngIf="!showForm[item.task_id]">{{item.jobtype}}</span></div>
+                  <div class="col-md-1"><span *ngIf="!showForm[item.task_id]">{{item.publisher}}</span></div>
+                  <div class="col-md-1"><span *ngIf="!showForm[item.task_id]">{{item.complexity | complexity}}</span></div>
+                  <div class="col-md-2"><span *ngIf="!showForm[item.task_id]">
+                        {{item.task_status | status}}
+                        <!-- <app-task-progress [task]="item" *ngIf="item.task_status==2"></app-task-progress>  -->
+                  </span></div>
+                  <div class="col-md-2"><span *ngIf="!showForm[item.task_id]">{{item.scheduled_start_date}}</span></div>
+                  <div class="col-md-1"><span *ngIf="!showForm[item.task_id]">{{item.scheduled_end_date}}</span></div>
+                  <div class="col-md-1" *ngIf="!showForm[item.task_id]"><span>{{item.scheduled_hours}}</span></div> 
+                  <div class="col-md-1" *ngIf="showForm[item.task_id]">
+                        <button 
+                              class="btn" 
+                              [ngClass]="{'btn-success':item.task_status==2}"
+                              (click)="changeTaskStatus(item.task_id, item.task_status, item.actual_hours)">
+                              {{item.task_status | current_status}}
+                        </button>
+                  </div> 
+                  <div class="col-md-1"><a href="javascript:;"><img src="/assets/img/edit.png"></a></div>
+            </div>
+            <app-create *ngIf="showForm[item.task_id]" [tasks]="item" [hidden]="" ></app-create><!-- @ngIfAnimation -->
+      </div>
+</div>
+</div> 
+
+

@@ -8,16 +8,17 @@ export class BroadcastService {
   seekers: Seek;
   constructor(private http: HttpClient) { }
 
-  
+  //private url = 'http://10.98.101.142/apsinthe/trackR/index.php/'; 
+  private url = 'http://10.98.20.100/trackRR/index.php/';
   
   get(token, uid): Observable<any>{
     return this.http
-      .get<any>('http://10.98.101.142/apsinthe/trackR/index.php/OfferSeek/broadcastlist?token=' + token + '&uid=' + uid)
+      .get<any>(this.url+'OfferSeek/broadcastlist?token=' + token + '&uid=' + uid)
   }
 
   createbroadcast(seekers){
     console.log(seekers);
-    return this.http.post<any>('http://10.98.101.142/apsinthe/trackR/index.php/OfferSeek/createbroadcast', {
+    return this.http.post<any>(this.url+'OfferSeek/createbroadcast', {
       "token" : seekers.user_token,
       "uid" : seekers.send_party,
       "TITLE" : seekers.title,
@@ -33,27 +34,27 @@ export class BroadcastService {
 
   getbroadcast(token, uid, bid): Observable<any>{
     return this.http
-      .get<any>('http://10.98.101.142/apsinthe/trackR/index.php/OfferSeek/broadcastdetails?token=' + token + '&uid=' + uid + '&broadcast_id='+bid)
+      .get<any>(this.url+'OfferSeek/broadcastdetails?token=' + token + '&uid=' + uid + '&broadcast_id='+bid)
   }
 
   getuserbroadcastlist(token, uid): Observable<any>{
     return this.http
-      .get<any>('http://10.98.101.142/apsinthe/trackR/index.php/OfferSeek/getuserbroadcastlist?token=' + token + '&uid=' + uid)
+      .get<any>(this.url+'OfferSeek/getuserbroadcastlist?token=' + token + '&uid=' + uid)
   }
 
   getuserreceivedlist(token, uid): Observable<any>{
     return this.http
-      .get<any>('http://10.98.101.142/apsinthe/trackR/index.php/OfferSeek/getuserreceivedlist?token=' + token + '&uid=' + uid)
+      .get<any>(this.url+'OfferSeek/getuserreceivedlist?token=' + token + '&uid=' + uid)
   }
 
   getuserdata(token, uid, userid): Observable<any>{
     return this.http
-      .get<any>('http://10.98.101.142/apsinthe/trackR/index.php/OfferSeek/getuserdata?token=' + token + '&uid=' + uid + '&user_id='+userid)
+      .get<any>(this.url+'OfferSeek/getuserdata?token=' + token + '&uid=' + uid + '&user_id='+userid)
   }
 
   acceptbroadcast(token, uid, bid): Observable<any>{
     return this.http
-      .post<any>('http://10.98.101.142/apsinthe/trackR/index.php/OfferSeek/acceptbroadcast', {"token" : token , "uid" : uid , "BROAD_ID" : bid})
+      .post<any>('OfferSeek/acceptbroadcast', {"token" : token , "uid" : uid , "BROAD_ID" : bid})
       .map(data => {
         return data;
       });

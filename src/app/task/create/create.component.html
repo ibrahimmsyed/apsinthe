@@ -1,0 +1,114 @@
+<!-- <h2 *ngIf="!currentpage">Create Task</h2> -->
+<div class="task-create">
+      <div class="container-fluid">
+            <div class="row">     
+                  <div class="col-12" >  
+                        <form #taskCreateForm="ngForm" (ngSubmit)="onSubmit(taskCreateForm.value)">
+                              <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                          <!-- <label>Job Type</label> -->
+                                          <select 
+                                                class="custom-select" 
+                                                name="jobtype" 
+                                                required
+                                                [(ngModel)]="currentTask.jobtype"
+                                                [ngClass]="{'create-page':!currentpage, 'ng-invalid-custom':true}" 
+                                                (ngModelChange)="changejobtype($event)"
+                                          >  
+                                                <option 
+                                                      *ngFor="let val of JobType" 
+                                                      [ngValue]="val" 
+                                                      [disabled]="val==='Job Type'" 
+                                                >
+                                                {{val}}
+                                                </option> 
+                                          </select>
+                                    </div>
+                                    <div class="form-group col-md-3">  
+                                          <input type="email" class="form-control" placeholder="ConvergeID"
+                                          name="converge_id"  required 
+                                          [(ngModel)]="currentTask.converge_id" [ngClass]="{'create-page':!currentpage}" >
+                                    </div>
+                              </div>
+
+                              <div class="form-row">  
+                                    
+                                    <div class="form-group col-md-3"> 
+                                          <select class="custom-select" 
+                                          name="complexity" required
+                                          [(ngModel)]="currentTask.complexity" [ngClass]="{'create-page':!currentpage}" >  
+                                                <option *ngFor="let val of Complexity; let i=index" [ngValue]="currentpage ? i : val" [disabled]="val==='Complexity'">{{val}}</option> 
+                                          </select>
+                                    </div>
+                                    <div class="form-group col-md-3"> 
+                                          <select class="custom-select" 
+                                          name="publisher" required
+                                          [(ngModel)]="currentTask.publisher" [ngClass]="{'create-page':!currentpage}" >  
+                                                <option *ngFor="let val of Publishers" [ngValue]="val"  [disabled]="val==='Publisher'">{{val}}</option> 
+                                          </select>
+                                    </div>
+                                    <div class="form-group col-md-3"> 
+                                          <select class="custom-select" 
+                                          name="pocs" required
+                                          [(ngModel)]="currentTask.pocs" [ngClass]="{'create-page':!currentpage}" >  
+                                                <option *ngFor="let val of POCS" [ngValue]="val" [disabled]="val==='POCs'">{{val}}</option> 
+                                          </select>
+                                    </div>
+                              </div>
+                              
+                              <div class="form-row">
+                                    <div class="form-group col-md-3"> 
+                                          <div class="input-group"> 
+                                                <input class="form-control" placeholder="Scheduled start date"  [(ngModel)]="schStart" name="scheduled_start_date" ngbDatepicker #a="ngbDatepicker" required [ngClass]="{'create-page':!currentpage}">
+                                                <div class="input-group-append">
+                                                      <button class="btn btn-outline-secondary" (click)="a.toggle()" type="button">
+                                                            <img src="/assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                                      </button>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="form-group col-md-3"> 
+                                          <div class="input-group">
+                                                <input class="form-control" placeholder="Scheduled end date"  [(ngModel)]="schEnd" name="scheduled_end_date" ngbDatepicker #b="ngbDatepicker" required [ngClass]="{'create-page':!currentpage}"><!--   -->
+                                                <div class="input-group-append">
+                                                      <button class="btn btn-outline-secondary" (click)="b.toggle()" type="button">
+                                                            <img src="/assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                                      </button>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="form-group col-md-3"> 
+                                          <input type="email" class="form-control" id="inputAddress" type="number"  placeholder="Scheduled hours" [ngClass]="{'create-page':!currentpage}"
+                                          [(ngModel)]="currentTask.schHours" 
+                                          name="scheduled_hours" required
+                                          >
+                                    </div> 
+                              </div>
+                              <div class="form-row" *ngIf="!currentpage">
+                                    <div class="form-group col-md-3"> 
+                                          <select class="custom-select" 
+                                          name="task_status" required
+                                          [(ngModel)]="currentTask.task_status" [ngClass]="{'create-page':!currentpage}" >  
+                                                <option *ngFor="let val of Status; let i =index" [ngValue]="currentpage ? i : val" [disabled]="val==='Status'">{{val}}</option>  
+                                          </select>
+                                    </div> 
+
+                              </div> 
+                              <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                          <label for="inputState">Comments</label>
+                                          <textarea class="form-control" [(ngModel)]="currentTask.comments" name="job_comments"></textarea> 
+                                    </div> 
+                                    <div class="form-group col-md-6" *ngIf="currentpage && editReason">
+                                          <label for="inputState">Edit Reason</label>
+                                          <textarea class="form-control" required [(ngModel)]="currentTask.edit_reason" name="edit_reason"></textarea> 
+                                    </div> 
+                                    <div class="form-group col-md-12" *ngIf="editReason">
+                                          <button type="submit" class="btn btn-primary" [disabled]="taskCreateForm.invalid">{{ctaText}}</button>
+                                    </div>
+                              </div>
+                        </form>
+                  </div> 
+            </div>
+      </div>
+</div>

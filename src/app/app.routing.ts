@@ -13,11 +13,19 @@ import { SeekdetailComponent } from './help/seekdetail/seekdetail.component';
 import { SeekedComponent } from './help/seeked/seeked.component';
 import { OfferedComponent } from './help/offered/offered.component';
 
+import { CreateComponent } from './task/create/create.component';
+import { ListComponent } from './task/list/list.component';
+import { CompletedComponent } from './task/completed/completed.component';
+
 const appRoutes: Routes = [
     { path: '',   redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
     { path: '', component: MainComponent, children:[{path : 'profile',component: ProfileComponent}], canActivate: [AuthGuard]},
     { path: '', component: MainComponent, children:[{path : 'calendar',component: CalendarComponent}], canActivate: [AuthGuard]},
+
+    { path: '', component: MainComponent, children:[{path : 'create',component: CreateComponent}], canActivate: [AuthGuard]},
+    { path: '', component: MainComponent, children:[{path : 'list',component: ListComponent}], canActivate: [AuthGuard]},
+    { path: '', component: MainComponent, children:[{path : 'completed',component: CompletedComponent}], canActivate: [AuthGuard]},
 
     { path: '', component: MainComponent, children:[{path : 'seek',component: SeekComponent}], canActivate: [AuthGuard]},
     { path: '', component: MainComponent, children:[{path : 'seeked',component: SeekedComponent}], canActivate: [AuthGuard]},

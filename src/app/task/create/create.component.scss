@@ -1,0 +1,72 @@
+.task-create{
+      padding: 3rem 0rem;
+      background: #FFF;
+      margin: 3rem 3rem 0 3rem
+}
+h2{
+      font-weight: 500;
+      color: #0ba224; 
+      padding-bottom: 1.5rem
+}
+.form-row .form-group{
+      padding: 1% 2%
+} 
+.form-group .form-control{
+      height: auto;
+      background-image: none;
+      border: 1px solid #bdbdbd;
+      margin: 0;
+      padding:0.375rem 1.75rem 0.375rem 0.75rem
+}
+.form-group .btn{
+      margin: 0;
+      box-shadow: none;  
+}
+.form-group .btn.btn-outline-secondary {
+      color: #6c757d;
+      background-color: transparent;
+      background-image: none; 
+      border: 1px solid #6c757d;
+      padding:.375rem .75rem; 
+  }
+.custom-select.ng-pristine.create-page{
+      color: #b4b4b4
+}
+.custom-select option{
+      color: #6a6a6a !important
+}
+.custom-select option[disabled]{
+      color: #cecece !important
+}  
+.form-control.create-page::-webkit-input-placeholder{
+      color:#b4b4b4 !important;
+}
+.form-control.create-page:-moz-placeholder {
+      color:#b4b4b4 !important;
+}
+.form-control, .custom-select, label {
+      font-size: 14px
+}
+
+/* Validation border-left: 5px solid #a94442 */
+.ng-valid[required]{
+      border-left: 5px solid green;      
+}
+.form-control.create-page.ng-dirty.ng-valid[required], .ng-dirty.ng-valid.create-page[required]{
+      border-left: 5px solid green !important;
+      
+}
+
+.form-control.ng-pristine[required].create-page, .custom-select.ng-pristine[required].create-page,  .custom-select.ng-untouched[required].create-page{
+      border-left: 5px solid #a94442
+}
+.ng-invalid:not(form).create-page  {
+      border-left: 5px solid #a94442; /* red */
+}
+.ng-invalid:not(form)  {
+      border-left: 5px solid #a94442; /* red */
+}
+.btn-primary.disabled, .btn-primary:disabled{
+      background: #ccc;
+      border: 1px solid #ccc
+}

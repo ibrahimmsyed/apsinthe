@@ -24,6 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BroadcastService } from './services/broadcast.service';
 import { HelpModule } from './help/help.module';
 import { SeekComponent } from './help/seek/seek.component';
+import { TaskModule } from './task/task.module';
+import { TaskService } from './services/task.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { TaskPipeModule } from './pipes/task-pipe.module';
 
 
 
@@ -40,6 +44,7 @@ import { SeekComponent } from './help/seek/seek.component';
     UserAccessModule,
     UserProfileModule,
     ComponentsModule,
+    TaskModule,
     FormsModule,
     HttpClientModule,
     routing,
@@ -47,7 +52,9 @@ import { SeekComponent } from './help/seek/seek.component';
     HelpModule,
     ReactiveFormsModule,
     // Specify your library as an import
-    NgxPermissionsModule.forRoot()
+    NgxPermissionsModule.forRoot(),
+    NgbModule.forRoot(),
+    TaskPipeModule
   ],
   providers: [
     AuthService,
@@ -55,7 +62,8 @@ import { SeekComponent } from './help/seek/seek.component';
     LoginGuard,
     AlertService,
     ProfileService,
-    BroadcastService
+    BroadcastService,
+    TaskService
   ],
   bootstrap: [AppComponent]
 })

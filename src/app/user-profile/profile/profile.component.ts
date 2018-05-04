@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.user_token = new UserToken;
     this.user_token = this.authservice.userAccessToken();
-    this.profileService.getUser(this.user_token.token, this.user_token.id).subscribe(data => this.items = data);
+    this.profileService.getUser(this.user_token.token, this.user_token.id).subscribe((data) => {this.items = data; console.log(data, this.user_token)});
   }
 
 }
