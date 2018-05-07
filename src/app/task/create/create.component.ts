@@ -4,6 +4,8 @@ import { TaskService } from '../../services/task.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { UserToken } from '../../model/User';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/map'; 
 
 @Component({
   selector: 'app-create',

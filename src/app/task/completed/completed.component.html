@@ -1,3 +1,25 @@
-<p>
-  completed works!
-</p>
+<div class="task-complete" *ngIf="showList">
+      <div class="container-fluid">            
+            <div class="row title"> 
+                  <div class="col-md-2 col-converge">ConvergeID</div>
+                  <div class="col-md-1">Job Type</div>
+                  <div class="col-md-1">Publisher</div>
+                  <div class="col-md-2">Complexity</div>  
+                  <div class="col-md-2">Sch.Start</div>
+                  <div class="col-md-2">Sch.End</div>
+                  <div class="col-md-1">Sch.Hours</div> 
+                  <div class="col-md-1">Actual Hours</div>
+            </div>  
+      
+            <div class="row" *ngFor="let item of taskCompleted | bucket : '3'">
+                  <div class="col-md-2 col-converge">{{item.converge_id}}</div>
+                  <div class="col-md-1">{{item.jobtype}}</div>
+                  <div class="col-md-1">{{item.publisher}}</div>
+                  <div class="col-md-2">{{item.complexity | complexity}}</div> 
+                  <div class="col-md-2">{{item.scheduled_start_date}}</div>
+                  <div class="col-md-2">{{item.scheduled_end_date}}</div>
+                  <div class="col-md-1">{{item.scheduled_hours}}</div>
+                  <div class="col-md-1">{{item.actual_hours}}</div>  
+            </div>
+      </div>
+</div>
