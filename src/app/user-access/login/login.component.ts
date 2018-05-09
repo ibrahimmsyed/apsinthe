@@ -40,10 +40,10 @@ export class LoginComponent implements OnInit {
     this.authservice.login(this.user.username, this.user.password)
     .subscribe(
         data => {
-          console.log('success');
-          console.log(data);
+          //console.log('success');
+         // console.log(data);
           if(data.token_id){
-            console.log(data.user_role);
+            //console.log(data.user_role);
             
             this.token = data.token;
             this.alertservice.success(data.message);
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
             
         },
         error => {
-          console.log('fail');
+          //console.log('fail');
             this.alertservice.error(error);
             //this.loading = false;
             

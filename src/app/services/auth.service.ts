@@ -20,8 +20,8 @@ export class AuthService {
   public user_token: UserToken;
   currenttime:number;
 
-  //private url = 'http://10.98.101.142/apsinthe/trackR/index.php/';
-  private url = 'http://10.98.20.100/trackRR/index.php/';
+  private url = 'http://10.98.101.142/apsinthe/trackR/index.php/';
+  //private url = 'http://10.98.20.100/trackRR/index.php/';
   
   constructor(private http: HttpClient,private alertservice : AlertService,private router: Router) { }
   login(username: string, password: string) { 

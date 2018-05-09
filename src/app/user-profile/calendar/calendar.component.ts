@@ -41,7 +41,7 @@ export class CalendarComponent implements OnInit {
     this.curDate = new Date(this.curYear, this.curMonth, 1);    
     this.fDate = this.curDate.getDate();
     this.fdayStart = this.curDate.getDay();
-    console.log("First Date " + this.fdayStart);
+    //console.log("First Date " + this.fdayStart);
 
     // get last day of present month 
     this.curDate.setMonth(this.curMonth+1, 0)    
@@ -55,10 +55,10 @@ export class CalendarComponent implements OnInit {
     this.weekDays = ['Sun', 'Mon', 'Tue', 'Wed','Thu', 'Fri', 'Sat'];
     this.dy = new Date();
     this.nowDate = this.dy.getDate();
-    console.log(this.nowDate);
+    //console.log(this.nowDate);
     
     this.dayName = this.weekDays[this.dy.getDay()];
-    console.log(this.dayName);
+    //console.log(this.dayName);
 
     var dy = 1;
 

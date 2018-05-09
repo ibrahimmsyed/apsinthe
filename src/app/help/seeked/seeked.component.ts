@@ -63,9 +63,9 @@ export class SeekedComponent implements OnInit {
       }else{
         for(let j in this.pusheditems){
           if(this.pusheditems[j] == this.olditems[j]){
-            console.log('equal');
+            //console.log('equal');
           }else{
-            console.log('not equal');
+            //console.log('not equal');
             this.alertAccepted(j);
           }
         }
@@ -88,10 +88,10 @@ export class SeekedComponent implements OnInit {
   }
   alertAccepted(bid){
     this.braodcastService.getbroadcast(this.user_token.token,this.user_token.id,bid).subscribe((data) => { 
-      console.log(data[0]);
+      //console.log(data[0]);
       if(data[0].RECEIVE_PARTY){
         this.braodcastService.getuserdata(this.user_token.token, this.user_token.id,  data[0].RECEIVE_PARTY).subscribe((user) => {
-            console.log(user)
+            //console.log(user)
             this.userData = user;
             this.accpetedName = this.userData[0].fname + ' ' + this.userData[0].lname;
             
@@ -115,7 +115,7 @@ export class SeekedComponent implements OnInit {
         this.acceptedUser[i] = 'N/A';
       }
     }
-    console.log(this.acceptedUser);
+    //console.log(this.acceptedUser);
   }
 
 }

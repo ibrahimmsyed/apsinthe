@@ -24,6 +24,7 @@ export class OfferedComponent implements OnInit {
     this.user_token = this.authservice.userAccessToken();
     
     this.braodcastService.getuserreceivedlist(this.user_token.token,this.user_token.id).subscribe((data) => {
+      console.log(data);
       this.receivedData = data;
       
       this.findSendParty(this.receivedData);
@@ -41,7 +42,7 @@ export class OfferedComponent implements OnInit {
         this.sentUser[i] = this.user[0].fname + ' ' + this.user[0].lname;
       });
     }
-    console.log(this.sentUser);
+    //console.log(this.sentUser);
   }
 
 }

@@ -16,11 +16,12 @@ export class ProfileComponent implements OnInit {
   constructor( private router: Router,private authservice:AuthService,private alertservice : AlertService, private profileService: ProfileService) { }
   user_token: UserToken;
   items: any;
+  itemses: any;
 
   ngOnInit() {
     this.user_token = new UserToken;
     this.user_token = this.authservice.userAccessToken();
-    this.profileService.getUser(this.user_token.token, this.user_token.id).subscribe((data) => {this.items = data; console.log(data, this.user_token)});
+    this.profileService.getUser(this.user_token.token, this.user_token.id).subscribe((data) => {this.items = data; this.itemses = data[0]; console.log(data)});
   }
 
 }
