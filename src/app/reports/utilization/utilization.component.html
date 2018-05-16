@@ -1,0 +1,28 @@
+<div class="report-section row">
+  <div class="">
+    <div class="table row" *ngIf="table_Show">
+      <div class="table-heading">Team Utilization</div>
+      <div class="table-content">
+        <ul>
+          <li class="table-head">
+            <div class="table-cell">Employee Name</div>
+            <div class="table-cell">Total No of Working Days</div>
+            <div class="table-cell">Total No of Present Days</div>    
+            <div class="table-cell">Total No of Worked Hours</div>   
+            <div class="table-cell">Total Utilization</div>     
+          </li>
+          <li *ngFor="let x of responseData">
+            <div class="table-cell"><a href="javascript:;" (click)="filterFunction()">{{x.name}}</a></div>
+            <div class="table-cell">{{x.total_no_of_workingdays}}</div>
+            <div class="table-cell">{{x.total_no_of_presentdays}}</div>    
+            <div class="table-cell">{{x.total_no_of_workedhours}}</div>   
+            <div class="table-cell">{{(x.total_no_of_workedhours/((x.total_no_of_presentdays)*8))*100|number}}%</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-3-4">
+    <app-pie-chart *ngIf="table_Show" [labelArray] ="labels" [dataArray]="data"></app-pie-chart>
+  </div>
+</div>

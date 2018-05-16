@@ -1,0 +1,11 @@
+<div class="btn-toolbar" role="toolbar" style="margin: 0 auto;">                        
+  <div class="btn-group">
+      <ul class="pagination" >
+          <li [ngClass]="{'disabled': (currentIndex == 1)}" ><a  (click)="prevPage(page)" href="javascript:;">Prev</a></li>
+          <li *ngFor="let page of pagesIndex"  [ngClass]="{'active': (currentIndex == page)}">
+              <a (click)="setPage(page)" href="javascript:;" >{{page}}</a>
+          </li>
+          <li [ngClass]="{'disabled': (currentIndex == pagesIndex.length)}" ><a   (click)="nextPage(page)" href="javascript:;">Next</a></li>
+      </ul>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+/* pagination css */
+.btn-group{
+    text-align: center;
+    width:100%;
+}
+ul.pagination {
+    display: inline-block;
+    width: auto;
+    margin: 30px auto;
+
+}
+.pagination li{display: inline-block;width:auto;}
+.pagination li a{
+    display: inline-block;
+    padding: 10px;
+    background: #4e7d75;
+    color: #fff;
+    font: 18px/1 Arial, Helvetica, sans-serif;
+    border: 1px solid #fff;
+}
+.pagination li.disabled{opacity: 0.4;}
+.pagination li.active{opacity: 0.8;}
+.pagination li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+/* pagination css end*/

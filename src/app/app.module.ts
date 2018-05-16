@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { routing } from './app.routing';
@@ -28,15 +28,14 @@ import { TaskModule } from './task/task.module';
 import { TaskService } from './services/task.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { TaskPipeModule } from './pipes/task-pipe.module';
-
-
-
-
-
+import { ReportsModule } from './reports/reports.module';
+import { GetDataService } from './services/get-data.service';
+import { UniqueDataService } from './services/unique-data.service';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
-    AppComponent,LoginComponent, PagenotfoundComponent, AlertComponent, MainComponent
+    AppComponent,LoginComponent, PagenotfoundComponent, AlertComponent, MainComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,10 +45,12 @@ import { TaskPipeModule } from './pipes/task-pipe.module';
     ComponentsModule,
     TaskModule,
     FormsModule,
+    ChartsModule,
     HttpClientModule,
     routing,
     BrowserAnimationsModule,
     HelpModule,
+    ReportsModule,
     ReactiveFormsModule,
     // Specify your library as an import
     NgxPermissionsModule.forRoot(),
@@ -63,8 +64,11 @@ import { TaskPipeModule } from './pipes/task-pipe.module';
     AlertService,
     ProfileService,
     BroadcastService,
-    TaskService
+    TaskService,
+    GetDataService,
+    UniqueDataService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

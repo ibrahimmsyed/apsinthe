@@ -16,6 +16,9 @@ import { OfferedComponent } from './help/offered/offered.component';
 import { CreateComponent } from './task/create/create.component';
 import { ListComponent } from './task/list/list.component';
 import { CompletedComponent } from './task/completed/completed.component';
+import { ProductivityComponent } from './reports/productivity/productivity.component';
+import { UtilizationComponent } from './reports/utilization/utilization.component';
+import { QualityComponent } from './reports/quality/quality.component';
 
 const appRoutes: Routes = [
     { path: '',   redirectTo: '/login', pathMatch: 'full' },
@@ -26,6 +29,10 @@ const appRoutes: Routes = [
     { path: '', component: MainComponent, children:[{path : 'create',component: CreateComponent}], canActivate: [AuthGuard]},
     { path: '', component: MainComponent, children:[{path : 'list',component: ListComponent}], canActivate: [AuthGuard]},
     { path: '', component: MainComponent, children:[{path : 'completed',component: CompletedComponent}], canActivate: [AuthGuard]},
+
+    { path: '', component: MainComponent, children:[{path : 'productivity',component: ProductivityComponent}], canActivate: [AuthGuard]},
+    { path: '', component: MainComponent, children:[{path : 'utilization',component: UtilizationComponent}], canActivate: [AuthGuard]},
+    { path: '', component: MainComponent, children:[{path : 'quality',component: QualityComponent}], canActivate: [AuthGuard]},
 
     { path: '', component: MainComponent, children:[{path : 'seek',component: SeekComponent}], canActivate: [AuthGuard]},
     { path: '', component: MainComponent, children:[{path : 'seeked',component: SeekedComponent}], canActivate: [AuthGuard]},

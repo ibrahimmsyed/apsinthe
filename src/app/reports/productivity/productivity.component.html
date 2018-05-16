@@ -1,0 +1,58 @@
+<div class="report-section row">
+  <div class="col2">
+    <div class="table row" *ngIf="table_Show">
+      <div class="table-heading">Team Prodictivity</div>
+      <div class="table-content">
+        <ul>
+          <li class="table-head">
+            <div class="table-cell">Project Owner</div>
+            <div class="table-cell">Total Prodictivity</div>        
+          </li>
+          <li *ngFor="let x of overAllProductivity">
+            <div class="table-cell"><a href="javascript:;" (click)="filterIndividualData(x.uid,x.projectOwner)">{{x.projectOwner}}</a></div>
+            <div class="table-cell">{{x.total|number}}%</div> 
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <app-pie-chart *ngIf="table_Show" [labelArray] ="labels" [dataArray]="data"></app-pie-chart>
+  </div>
+  <!-- individual table start-->
+  <div class="row" *ngIf="table_Show">
+      <div *ngFor="let x of overAllProductivity">
+          <div class="table" *ngIf="individual_table_Show[x.projectOwner]">
+            <div class="table-heading">Team Individual Productivity</div>
+            <div class="table-content">
+              <ul *ngIf="hideData">
+                <li class="table-head">
+                  <div class="table-cell">Project Owner</div>
+                  <div class="table-cell">Converge Id</div> 
+                  <div class="table-cell">Job Type</div> 
+                  <div class="table-cell">Publisher</div> 
+                  <div class="table-cell">Team</div>
+                  <div class="table-cell">Scheduled Hours</div>
+                  <div class="table-cell">Actual Hours</div>
+                  <div class="table-cell">Productivity</div>
+                </li>
+                <li *ngFor="let data of paginationArray">
+                  <div class="table-cell">{{data.project_owner}}</div>
+                  <div class="table-cell">{{data.converge_id}}</div> 
+                  <div class="table-cell">{{data.jobtype}}</div> 
+                  <div class="table-cell">{{data.publisher}}</div> 
+                  <div class="table-cell">{{data.team}}</div>
+                  <div class="table-cell">{{data.scheduled_hours}}</div>
+                  <div class="table-cell">{{data.actual_hours}}</div> 
+                  <div class="table-cell">{{((data.scheduled_hours/data.actual_hours)*100)|number}}%</div> 
+                </li>
+              </ul>              
+            </div>
+            <app-pagination [arrayLen]="arrayLength" (arrayValues)="paginationWork($event)"></app-pagination> 
+          </div>               
+      </div>
+  </div>
+  <!-- individual table end-->
+
+</div>
+

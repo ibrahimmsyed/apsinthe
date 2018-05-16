@@ -7,7 +7,8 @@ export class ProfileService {
   param1;
   param2;
 
-  private url = 'http://10.98.101.142/apsinthe/trackR/index.php/'; 
+  //private url = 'http://10.98.20.102/trackR-master/index.php/'; 
+  private url = 'http://10.98.101.142/apsinthe/trackR/index.php/';
   //private url = 'http://10.98.20.100/trackRR/index.php/';
 
   constructor(private http: HttpClient) { }

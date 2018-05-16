@@ -8,7 +8,8 @@ export class BroadcastService {
   seekers: Seek;
   constructor(private http: HttpClient) { }
 
-  private url = 'http://10.98.101.142/apsinthe/trackR/index.php/'; 
+  //private url = 'http://10.98.20.102/trackR-master/index.php/'; 
+  private url = 'http://10.98.101.142/apsinthe/trackR/index.php/';
   //private url = 'http://10.98.20.100/trackRR/index.php/';
   
   get(token, uid): Observable<any>{

@@ -5,7 +5,8 @@ import { Task } from '../task/task';
 @Injectable()
 export class TaskService { 
  
-      private url = 'http://10.98.101.142/apsinthe/trackR/index.php/'; 
+      //private url = 'http://10.98.20.102/trackR-master/index.php/'; 
+      private url = 'http://10.98.101.142/apsinthe/trackR/index.php/';
       private token;
       private userID;
       //private url = 'http://10.98.20.100/trackRR/index.php/'; 
